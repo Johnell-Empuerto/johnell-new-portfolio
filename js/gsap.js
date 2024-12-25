@@ -32,9 +32,9 @@ tl.to(".craft", {
 // Create a timeline for the animations
 const sl = gsap.timeline({
   scrollTrigger: {
-    trigger: ".dev-con-animate", // Element to trigger the animation
-    start: "top 60%", // When the top of the section reaches 60% of the viewport
-    end: "bottom 40%", // Optional: End of the trigger zone
+    trigger: ".dev", // Element to trigger the animation
+    start: "top 90%", // When the top of the section reaches 60% of the viewport
+    end: "bottom 10%", // Optional: End of the trigger zone
     toggleActions: "play none none none", // Play animation on scroll in
     markers: false, // Debugging markers (optional, remove in production)
   },
@@ -88,7 +88,6 @@ gsap.fromTo(".zoom-image", {
   opacity: 1, // Fully visible
   duration: 1.5, // Duration of the animation
   ease: "power2.out", // Smooth easing
-  delay: 1, // Add a 1-second delay before the animation starts
   scrollTrigger: {
     trigger: ".image-container", // Element to trigger the animation
     start: "top 80%", // Trigger when the top of the container reaches 80% of the viewport
@@ -107,7 +106,6 @@ gsap.fromTo(".zoom-left", {
   opacity: 1, // Fully visible
   duration: 1.5, // Duration of the animation
   ease: "power2.out", // Smooth easing
-  delay: 1, // Add a 1-second delay before the animation starts
   scrollTrigger: {
     trigger: ".image-container", // Element to trigger the animation
     start: "top 80%", // Trigger when the top of the container reaches 80% of the viewport
