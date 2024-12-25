@@ -1396,6 +1396,25 @@ body.loaded .loader {
     background-color: #000;
   }
 
+
+  /* Hide the navbar on mobile by default */
+.collapse {
+    display: none;
+}
+
+/* Show the navbar when 'show' class is added */
+.collapse.show {
+    display: block;
+}
+
+/* On desktop, always show the navbar */
+@media (min-width: 992px) {
+    .collapse {
+        display: block !important;
+    }
+}
+
+
   
 
   
