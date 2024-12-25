@@ -1,6 +1,32 @@
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
 
+
+// Create a timeline for the animations
+const wl = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".head-animate", // Element to trigger the animation
+    start: "top 90%", // When the top of the section reaches 70% of the viewport
+    end: "bottom 10%", // Optional: End of the trigger zone
+    toggleActions: "play none none none", // Play animation on scroll in
+    markers: false, // Debugging markers (optional, remove in production)
+  },
+});
+
+// Animate each letter of the word "Web Solutions"
+wl.fromTo(".heading-animate", {
+  x: "-100%", // Start from the left (off-screen)
+  opacity: 0, // Start with hidden letters
+}, {
+  x: "0%", // Move to original position
+  opacity: 1, // Fade in
+  color: "#2ecc71", // Change text color to white
+  duration: 0.5, // Duration of each letter's animation
+  stagger: 0.1, // Stagger the animation of each letter by 0.1s
+  ease: "power2.out", // Smooth easing
+  delay: 7, // Add a 0.5-second delay before the animation starts
+});
+
 // Create a timeline for the animations
 const tl = gsap.timeline({
   scrollTrigger: {
@@ -29,56 +55,6 @@ tl.to(".craft", {
 }, "-=0.5"); // Overlap by 0.5 seconds
 
 
-// Create a timeline for the animations
-const sl = gsap.timeline({
-  scrollTrigger: {
-    trigger: ".dev", // Element to trigger the animation
-    start: "top 90%", // When the top of the section reaches 60% of the viewport
-    end: "bottom 10%", // Optional: End of the trigger zone
-    toggleActions: "play none none none", // Play animation on scroll in
-    markers: false, // Debugging markers (optional, remove in production)
-  },
-});
-
-// Animate each letter of the word "Developer"
-sl.fromTo(".dev", {
-  x: "-100%", // Start from the left (off-screen)
-  opacity: 0, // Start with hidden letters
-}, {
-  x: "0%", // Move to original position
-  opacity: 1, // Fade in
-  color: "#2ecc71", // Change text color to white
-  duration: 0.5, // Duration of each letter's animation
-  stagger: 0.1, // Stagger the animation of each letter by 0.1s
-  ease: "power2.out", // Smooth easing
-});
-
-// Create a timeline for the animations
-const wl = gsap.timeline({
-  scrollTrigger: {
-    trigger: ".head-animate", // Element to trigger the animation
-    start: "top 90%", // When the top of the section reaches 70% of the viewport
-    end: "bottom 10%", // Optional: End of the trigger zone
-    toggleActions: "play none none none", // Play animation on scroll in
-    markers: false, // Debugging markers (optional, remove in production)
-  },
-});
-
-// Animate each letter of the word "Web Solutions"
-wl.fromTo(".heading-animate", {
-  x: "-100%", // Start from the left (off-screen)
-  opacity: 0, // Start with hidden letters
-}, {
-  x: "0%", // Move to original position
-  opacity: 1, // Fade in
-  color: "#2ecc71", // Change text color to white
-  duration: 0.5, // Duration of each letter's animation
-  stagger: 0.1, // Stagger the animation of each letter by 0.1s
-  ease: "power2.out", // Smooth easing
-  delay: 7, // Add a 0.5-second delay before the animation starts
-});
-
-
 // Create the zoom-in animation
 gsap.fromTo(".zoom-image", {
   scale: 0.5, // Initial scale (zoomed out)
@@ -86,12 +62,12 @@ gsap.fromTo(".zoom-image", {
 }, {
   scale: 1, // Zoom in
   opacity: 1, // Fully visible
-  duration: 1.5, // Duration of the animation
+  duration: 1, // Duration of the animation
   ease: "power2.out", // Smooth easing
   scrollTrigger: {
     trigger: ".image-container", // Element to trigger the animation
-    start: "top 80%", // Trigger when the top of the container reaches 80% of the viewport
-    end: "top 40%", // Optional: End of the trigger zone
+    start: "top 90%", // Trigger when the top of the container reaches 80% of the viewport
+    end: "top 10%", // Optional: End of the trigger zone
     toggleActions: "play none none none", // Play animation on scroll in
     markers: false, // Debugging markers (optional, remove in production)
   },
@@ -108,8 +84,8 @@ gsap.fromTo(".zoom-left", {
   ease: "power2.out", // Smooth easing
   scrollTrigger: {
     trigger: ".image-container", // Element to trigger the animation
-    start: "top 80%", // Trigger when the top of the container reaches 80% of the viewport
-    end: "top 40%", // Optional: End of the trigger zone
+    start: "top 90%", // Trigger when the top of the container reaches 80% of the viewport
+    end: "top 10%", // Optional: End of the trigger zone
     toggleActions: "play none none none", // Play animation on scroll in
     markers: false, // Debugging markers (optional, remove in production)
   },
@@ -119,7 +95,7 @@ gsap.fromTo(".zoom-left", {
 // Animate the line from right to left
 gsap.to(".bold-line", {
   width: "100%", // Expand to full width
-  duration: 2.5, // Duration of the animation
+  duration: 1.5, // Duration of the animation
   ease: "power2.out", // Smooth easing
   scrollTrigger: {
     trigger: ".bold-line", // Element to trigger the animation
