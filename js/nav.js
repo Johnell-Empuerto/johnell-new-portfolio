@@ -1,19 +1,18 @@
-$(document).on("scroll", function(){
-    if($(document).scrollTop() > 86)
-    {
-      $("#navbar").addClass("sticky");
-      $("#nav-logo").addClass("color-white");
-      $(".nav-custom-link").addClass("color-white");
-      $(".navbar-btn").addClass("nav-btn-icon");
-    }
-    else
-    {
-        $("#navbar").removeClass("sticky");
-        $("#nav-logo").removeClass("color-white");
-        $(".nav-custom-link").removeClass("color-white");
-        $(".navbar-btn").removeClass("nav-btn-icon");
-    }
+document.addEventListener("scroll", function() {
+  const navbar = document.getElementById("navbar");
+  const navLogo = document.getElementById("nav-logo");
+  const navLinks = document.querySelectorAll(".nav-custom-link");
+  const navbarBtn = document.querySelector(".navbar-btn");
+
+  if (document.documentElement.scrollTop > 86) {
+      navbar.classList.add("sticky");
+      navLogo.classList.add("color-white");
+      navLinks.forEach(link => link.classList.add("color-white"));
+      navbarBtn.classList.add("nav-btn-icon");
+  } else {
+      navbar.classList.remove("sticky");
+      navLogo.classList.remove("color-white");
+      navLinks.forEach(link => link.classList.remove("color-white"));
+      navbarBtn.classList.remove("nav-btn-icon");
+  }
 });
-
-
-
